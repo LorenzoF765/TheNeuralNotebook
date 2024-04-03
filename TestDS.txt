@@ -1,0 +1,7 @@
+| Text                                                | Category    |
+|-----------------------------------------------------|-------------|
+| Remember to buy milk and eggs on the way home.     | Personal    |
+| Finish reading Chapter 3 for tomorrow's lecture.   | Academic   |
+| Meeting with client at 2:00 PM tomorrow.           | Work       |
+| Call mom to wish her happy birthday.               | Personal   |
+| Summary: The Great Gatsby by F. Scott Fitzgerald   | Academic  |

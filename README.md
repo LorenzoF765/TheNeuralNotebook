@@ -1,2 +1,2 @@
-# The Neural Notebook
- My 2024 Capstone Project
+# Capstone Project
+ My Capstone Project for my 3rd year at Neumont.
