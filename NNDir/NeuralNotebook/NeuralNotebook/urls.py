@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from NeuralNotebookApp.views import testView
+from NeuralNotebookApp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test', testView)
+    path('test', testView),
+    path('chat', chatView)
 ]

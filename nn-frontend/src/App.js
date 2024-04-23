@@ -1,23 +1,47 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import {React, useState} from 'react'; 
+
 
 function App() {
-  const onSubmit=async (e )=> {
+
+  const [userInput, setUserInput] = useState(null);
+
+  const [message, setMessage] = useState(null);
+
+  const handleUserInputChange= (e)=> {
+    setUserInput(e.target.value);
+  }
+
+  const onSubmit=async (e)=> {
     e.preventDefault();
-    await axios.get("http://127.0.0.1:8000/test")
+    const data = {
+      "msgData":userInput
+    }
+    await axios.post("http://127.0.0.1:8000/chat", data, {
+      headers: { 'Content-Type': 'application/json'}, 
+    })
       .then((response)=>{
         console.log(response.data);
+        setMessage(response.data.response[0][1]);
+        //this CAN be a console.log()
       })
   }
 
   return (
     <div className="App">
       <form onSubmit={onSubmit}> 
-
-        <input type="text"/>
+        <input type="text" onChange={handleUserInputChange}/>
         <button type="submit">Submit</button>
       </form>
+        {
+          message && (
+            <p>
+              {message}
+            </p>
+          )
+        }
     </div>
   );
 }
