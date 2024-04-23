@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'NeuralNotebookApp',
     'rest_framework',
     'corsheaders',
     'openai',
-    'openai_test'
 ]
 
 MIDDLEWARE = [
