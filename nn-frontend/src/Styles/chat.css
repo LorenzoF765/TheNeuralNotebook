@@ -1,0 +1,74 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* App Container */
+  .App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    justify-content: space-between; /* Distribute space evenly */
+    padding: 10px; /* Padding around the container */
+  }
+  
+  /* Chat Input Form */
+  form {
+    display: flex; /* Align input and button in a row */
+    margin-bottom: 10px; /* Space between form and other content */
+  }
+  
+  /* Input Field */
+  input[type='text'] {
+    flex: 1; /* Expand to fill available space */
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-size: 16px; /* Readable font size */
+  }
+  
+  /* Submit Button */
+  button {
+    padding: 10px 20px; /* Comfortable padding */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darken on hover */
+  }
+  
+  /* Chat Message Display */
+  p {
+    padding: 10px; /* Padding inside the chat area */
+    background-color: white; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 10px 0; /* Margin to separate messages */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    input[type='text'] {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    button {
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+  
+    p {
+      padding: 8px; /* Adjust padding for smaller screens */
+    }
+  }
+  

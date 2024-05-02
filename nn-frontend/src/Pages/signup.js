@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {React, useState} from 'react'; 
+import '../Styles/signup.css'
 
 export default function SignUpPage() {
 
@@ -32,8 +33,18 @@ export default function SignUpPage() {
         <div>
             <h1>Welcome to the account creation page!</h1>
         <form onSubmit={onSubmit}>
-            <input type="text" onChange={handleUsernameChange}/>
-            <input type="text" onChange={handlePasswordChange}/>
+        <input
+                    type="text"
+                    placeholder="Username" // Placeholder text for username
+                    onChange={handleUsernameChange}
+                    value={username}
+                />
+                <input
+                    type="text" // Use 'password' type for hidden input
+                    placeholder="Password" // Placeholder text for password
+                    onChange={handlePasswordChange}
+                    value={password}
+                />
             <button type="submit">Enter</button>
         </form>
         </div>

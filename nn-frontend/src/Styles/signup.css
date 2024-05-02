@@ -1,0 +1,62 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Clean, standard font */
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Page Container */
+  div {
+    max-width: 600px; /* Limit width for readability */
+    margin: 50px auto; /* Center the container and add vertical space */
+    padding: 20px; /* Padding for internal spacing */
+    background-color: white; /* White background for a clean look */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  /* Header */
+  h1 {
+    text-align: center; /* Center-align the heading */
+    color: #555; /* Slightly lighter text color for headings */
+    margin-bottom: 20px; /* Spacing below the heading */
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex; /* Align input fields and button */
+    flex-direction: column; /* Stack fields vertically */
+    gap: 10px; /* Space between form elements */
+  }
+  
+  /* Input Fields */
+  input[type='text'] {
+    padding: 12px; /* Comfortable padding */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-size: 16px; /* Larger font for readability */
+  }
+  
+  input[type='text']:focus {
+    border-color: #4CAF50; /* Highlighted border color when focused */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Submit Button */
+  button {
+    padding: 12px; /* Comfortable padding */
+    background-color: #4CAF50; /* Green background for a professional look */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darken on hover */
+  }
+  
