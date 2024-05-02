@@ -1,0 +1,61 @@
+/* HomePage.css */
+
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Clean, standard font */
+    background-color: #f9f9f9; /* Light gray background */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Home Container */
+  .home-container {
+    max-width: 800px; /* Maximum width for the main container */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Padding around the container */
+  }
+  
+  /* Home Header */
+  .home-header {
+    text-align: center; /* Center-align header content */
+    padding-bottom: 20px; /* Padding at the bottom for spacing */
+    border-bottom: 1px solid #ddd; /* Light border for separation */
+  }
+  
+  /* Home About Section */
+  .home-about {
+    margin-top: 20px; /* Spacing between sections */
+    padding: 10px;
+  }
+  
+  /* Home Actions Section */
+  .home-actions {
+    text-align: center; /* Center-align the content */
+    margin-top: 20px; /* Spacing between sections */
+    padding: 10px;
+  }
+  
+  .home-button {
+    padding: 12px 20px; /* Padding for buttons */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text for contrast */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px; /* Spacing between buttons */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    display: inline-block; /* Inline-block for spacing and alignment */
+  }
+  
+  .home-button:hover {
+    background-color: #45a049; /* Darken on hover */
+  }
+  
+  /* Home Footer */
+  .home-footer {
+    text-align: center; /* Center-align footer content */
+    padding-top: 20px; /* Padding at the top for spacing */
+    border-top: 1px solid #ddd; /* Light border for separation */
+    font-size: 14px; /* Smaller font for the footer */
+  }
+  
