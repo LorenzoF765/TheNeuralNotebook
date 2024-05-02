@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import HomePage from './Pages/home';
 import ChatPage from './Pages/chat';
+import SignUpPage from './Pages/signup';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route index element= {<HomePage/>}/>
           <Route path= "/chat" element= {<ChatPage/>}/>
+          <Route path= "/signup" element= {<SignUpPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

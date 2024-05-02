@@ -22,3 +22,4 @@ def callUponTheAllmightyKai(msgData):
   )
 
   return (completion.choices[0].message)
+
