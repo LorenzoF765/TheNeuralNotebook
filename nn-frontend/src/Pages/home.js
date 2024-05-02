@@ -17,7 +17,7 @@ export default function HomePage() {
                 <h2>About This Project</h2>
                 <p>
                     The Neural Notebook is an application designed to leverage AI technology to enhance 
-                    productivity and creativity. Our AI, named Kai, helps users with various tasks 
+                    productivity and creativity. Our AI, built up from GPT4-Turbo, named Kai, helps users with various tasks 
                     ranging from generating ideas to answering questions.
                 </p>
             </section>
