@@ -21,7 +21,7 @@ from NeuralNotebookApp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test', testView),
-    path('modelgen', modelView),
+    path('modelgen', modelGen),
     path('modelview', my_loginData_list),
     path('chat', chatView)
 ]
