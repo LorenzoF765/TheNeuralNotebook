@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie'; // Correctly imported
+import { Link } from 'react-router-dom'; // For navigation to other pages
 import '../Styles/signup.css';
 
 export default function SignUpPage() {
@@ -56,7 +57,7 @@ export default function SignUpPage() {
                     value={username}
                 />
                 <input
-                    type="password" // Ensure correct input type for password
+                    type="text" // Ensure correct input type for password
                     placeholder="Password"
                     onChange={(e) => {
                         setPassword(e.target.value);
@@ -65,6 +66,7 @@ export default function SignUpPage() {
                     value={password}
                 />
                 <button type="submit">Sign Up</button>
+                <Link to="/login" className="home-button">Already have an account? Login!</Link>
             </form>
 
             {error && (

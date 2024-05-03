@@ -1,62 +1,79 @@
-/* General Styles */
+/* General Styling */
 body {
-    font-family: 'Arial', sans-serif; /* Clean, standard font */
-    background-color: #f9f9f9; /* Light gray background */
+    font-family: 'Roboto', sans-serif; /* Modern font for a sleek look */
+    background-color: #f5f5f5; /* Light gray background */
     color: #333; /* Dark text for readability */
     margin: 0;
     padding: 0;
   }
   
-  /* Page Container */
-  div {
-    max-width: 600px; /* Limit width for readability */
-    margin: 50px auto; /* Center the container and add vertical space */
-    padding: 20px; /* Padding for internal spacing */
-    background-color: white; /* White background for a clean look */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  /* Signup Page Container */
+  .signup-container {
+    max-width: 600px; /* Fixed width for consistent layout */
+    margin: 50px auto; /* Centered with top margin */
+    padding: 20px; /* Padding for comfort */
+    background-color: white; /* White background */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content */
   }
   
-  /* Header */
-  h1 {
-    text-align: center; /* Center-align the heading */
-    color: #555; /* Slightly lighter text color for headings */
-    margin-bottom: 20px; /* Spacing below the heading */
-  }
-  
-  /* Form Styles */
-  form {
-    display: flex; /* Align input fields and button */
-    flex-direction: column; /* Stack fields vertically */
-    gap: 10px; /* Space between form elements */
+  /* Signup Form */
+  .signup-form {
+    display: flex;
+    flex-direction: column; /* Stacked layout */
+    gap: 15px; /* Space between elements */
+    padding: 20px; /* Padding for comfort */
   }
   
   /* Input Fields */
-  input[type='text'] {
-    padding: 12px; /* Comfortable padding */
+  .signup-form input {
+    padding: 10px; /* Padding for comfort */
     border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    font-size: 16px; /* Larger font for readability */
+    border-radius: 5px; /* Smooth corners */
+    font-size: 16px; /* Consistent font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* Ensure full width */
   }
   
-  input[type='text']:focus {
-    border-color: #4CAF50; /* Highlighted border color when focused */
-    outline: none; /* Remove default outline */
+  .signup-form input:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    outline: none; /* Remove outline */
   }
   
   /* Submit Button */
-  button {
-    padding: 12px; /* Comfortable padding */
-    background-color: #4CAF50; /* Green background for a professional look */
+  .signup-form button {
+    padding: 12px 20px; /* Padding for comfort */
+    background-color: #4CAF50; /* Green background */
     color: white; /* White text for contrast */
     border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s; /* Smooth transition on hover */
+    border-radius: 5px; /* Smooth corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
   }
   
-  button:hover {
+  .signup-form button:hover {
     background-color: #45a049; /* Darken on hover */
+  }
+  
+  /* Error and Success Messages */
+  .error-message {
+    color: red; /* Red for error */
+    background-color: #fdd; /* Light red background */
+    padding: 10px; /* Padding for comfort */
+    border-radius: 5px; /* Smooth corners */
+    border: 1px solid #f99; /* Light red border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 10px; /* Space above error message */
+  }
+  
+  .success-message {
+    color: green; /* Green for success */
+    background-color: #dfd; /* Light green background */
+    padding: 10px; /* Padding for comfort */
+    border-radius: 5px; /* Smooth corners */
+    border: 1px solid #9c9; /* Light green border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 10px; /* Space above success message */
   }
   
