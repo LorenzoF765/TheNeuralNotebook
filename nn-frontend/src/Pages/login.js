@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../Styles/login.css'; // Import your styling
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null); // For error messages
-
- // For navigation
+    const navigate = useNavigate(); // For navigation
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -30,7 +29,7 @@ export default function LoginPage() {
 
         try {
             const response = await axios.post(
-                'http://127.0.0.1:8000/modelgen', // Endpoint for login
+                'http://127.0.0.1:8000/login', // Endpoint for login
                 data,
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -39,7 +38,7 @@ export default function LoginPage() {
 
             if (response.status === 200) {
                 // If login is successful, navigate to the account page
-                <Link to="/signup"/>// Navigate to Account.js
+                navigate('/account'); // Navigate to Account.js
             } else {
                 setError('Invalid username or password.');
             }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Cookies from 'js-cookie'; // Correctly imported
-import { Link } from 'react-router-dom'; // For navigation to other pages
+import { Link } from 'react-router-dom';
 import '../Styles/signup.css';
 
 export default function SignUpPage() {
@@ -10,27 +9,14 @@ export default function SignUpPage() {
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
 
-    const csrfToken = Cookies.get('csrftoken'); // Retrieve CSRF token
-
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        const data = {
-            username: username,
-            password: password,
-        };
-
         try {
-            const response = await axios.post(
-                'http://127.0.0.1:8000/modelgen',
-                data,
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': csrfToken, // Include CSRF token
-                    },
-                }
-            );
+            await axios.post('http://127.0.0.1:8000/modelgen', {
+                username: username,
+                password: password
+            });
 
             setSuccess(true); // Indicate success
         } catch (error) {
@@ -50,19 +36,13 @@ export default function SignUpPage() {
                 <input
                     type="text"
                     placeholder="Username"
-                    onChange={(e) => {
-                        setUsername(e.target.value);
-                        setError(null); // Clear error on change
-                    }}
+                    onChange={(e) => setUsername(e.target.value)}
                     value={username}
                 />
                 <input
-                    type="text" // Ensure correct input type for password
+                    type="password"
                     placeholder="Password"
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                        setError(null); // Clear error on change
-                    }}
+                    onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
                 <button type="submit">Sign Up</button>

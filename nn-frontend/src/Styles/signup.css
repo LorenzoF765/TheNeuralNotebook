@@ -1,34 +1,33 @@
 /* General Styling */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font for a sleek look */
-    background-color: #f5f5f5; /* Light gray background */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #f5f5f5; /* Light background */
     color: #333; /* Dark text for readability */
     margin: 0;
     padding: 0;
   }
   
-  /* Signup Page Container */
+  /* Container for the Signup Page */
   .signup-container {
-    max-width: 600px; /* Fixed width for consistent layout */
-    margin: 50px auto; /* Centered with top margin */
-    padding: 20px; /* Padding for comfort */
+    max-width: 600px; /* Fixed width */
+    margin: 40px auto; /* Centered horizontally with top margin */
+    padding: 20px; /* Padding around the container */
     background-color: white; /* White background */
     border-radius: 10px; /* Smooth corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     text-align: center; /* Center-align content */
   }
   
-  /* Signup Form */
+  /* Form Styling */
   .signup-form {
     display: flex;
-    flex-direction: column; /* Stacked layout */
+    flex-direction: column; /* Vertical alignment */
     gap: 15px; /* Space between elements */
-    padding: 20px; /* Padding for comfort */
   }
   
-  /* Input Fields */
+  /* Input Field Styling */
   .signup-form input {
-    padding: 10px; /* Padding for comfort */
+    padding: 10px; /* Comfortable padding */
     border: 1px solid #ccc; /* Light border */
     border-radius: 5px; /* Smooth corners */
     font-size: 16px; /* Consistent font size */
@@ -38,42 +37,42 @@ body {
   
   .signup-form input:focus {
     border-color: #4CAF50; /* Green border on focus */
-    outline: none; /* Remove outline */
+    outline: none; /* No outline */
   }
   
-  /* Submit Button */
+  /* Button Styling */
   .signup-form button {
     padding: 12px 20px; /* Padding for comfort */
     background-color: #4CAF50; /* Green background */
     color: white; /* White text for contrast */
-    border: none; /* No border */
     border-radius: 5px; /* Smooth corners */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
   }
   
   .signup-form button:hover {
     background-color: #45a049; /* Darken on hover */
   }
   
-  /* Error and Success Messages */
+  /* Error Message Styling */
   .error-message {
     color: red; /* Red for error */
     background-color: #fdd; /* Light red background */
-    padding: 10px; /* Padding for comfort */
+    padding: 10px; /* Padding */
     border-radius: 5px; /* Smooth corners */
     border: 1px solid #f99; /* Light red border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
     margin-top: 10px; /* Space above error message */
   }
   
   .success-message {
     color: green; /* Green for success */
     background-color: #dfd; /* Light green background */
-    padding: 10px; /* Padding for comfort */
+    padding: 10px; /* Padding */
     border-radius: 5px; /* Smooth corners */
     border: 1px solid #9c9; /* Light green border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
     margin-top: 10px; /* Space above success message */
   }
   

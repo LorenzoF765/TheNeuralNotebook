@@ -1,23 +1,41 @@
-from django.shortcuts import render 
+# views.py
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status  # Importing status for HTTP status codes
-from django.http import JsonResponse
+from rest_framework import status
 from .models import *
 from .openai_test import *
 
+@api_view(['POST'])
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-@api_view (['GET'])
+        # Authenticate user
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            # Log the user in
+            login(request, user)
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'error': 'Invalid username or password'})
+
+    return JsonResponse({'success': False, 'error': 'Method not allowed'})
+
+@api_view(['GET'])
 def testView(request):
     response = Yippee()    
     return Response({'response': response})
 
-@api_view (['POST'])
+@api_view(['POST'])
 def chatView(request):
     message = request.data["msgData"]
-    response = callUponTheAllmightyKai(message)
-    return Response ({'response': response})
-
+    conversation = request.data.get("conversation", [])  # Get the entire conversation
+    response = callUponTheAllmightyKai(message, conversation)
+    return Response({'response': response})
 
 def my_loginData_list(request):
     models = LoginInfo.objects.all()

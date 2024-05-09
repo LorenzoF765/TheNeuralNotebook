@@ -3,6 +3,7 @@ import HomePage from './Pages/home';
 import ChatPage from './Pages/chat';
 import SignUpPage from './Pages/signup';
 import LoginPage from './Pages/login';
+import AccountPage from './Pages/account';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path= "/chat" element= {<ChatPage/>}/>
           <Route path= "/signup" element= {<SignUpPage/>}/>
           <Route path= "/login" element= {<LoginPage/>}/>
+          <Route path= "/account" element= {<AccountPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>
