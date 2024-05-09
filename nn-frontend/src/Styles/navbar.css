@@ -1,0 +1,27 @@
+/* navigationBar.css */
+
+/* Navbar Container */
+.navbar-container {
+    background-color: #373737; /* Light gray background */
+    padding: 10px; /* Padding around the navbar */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Navbar Buttons */
+.navbar-button {
+    background-color: #b18bce; /* Light purple background */
+    color: white; /* White text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 5px; /* Margin between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.navbar-button:hover {
+    background-color: #9b6ba4; /* Darken on hover */
+}

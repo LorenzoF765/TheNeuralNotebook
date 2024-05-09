@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import '../Styles/chat.css';
+import NavigationBar from './Navbar';
 
 export default function ChatPage() {
     const [userInput, setUserInput] = useState('');
@@ -48,6 +49,7 @@ export default function ChatPage() {
 
     return (
         <div className="chat-container">
+            <NavigationBar />
             <div className="sidebar">
                 <h2>Saved Conversations</h2>
                 {savedConversations.map((conversation, index) => (
@@ -70,7 +72,7 @@ export default function ChatPage() {
                 {conversation.map((msg, index) => (
                     <div key={index} className="message">
                         <p>User: {msg.user}</p>
-                        <p>AI: {msg.ai}</p>
+                        <p>Kai: {msg.ai}</p>
                     </div>
                 ))}
                 {conversation.length > 0 && (

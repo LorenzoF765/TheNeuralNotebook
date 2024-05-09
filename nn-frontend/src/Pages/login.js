@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../Styles/login.css'; // Import your styling
+import NavigationBar from './Navbar';
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
@@ -49,6 +50,7 @@ export default function LoginPage() {
 
     return (
         <div className="login-container"> {/* Container for styling */}
+        <NavigationBar />
             <h1>Login to Your Account</h1>
 
             <form className="login-form" onSubmit={onLoginSubmit}>

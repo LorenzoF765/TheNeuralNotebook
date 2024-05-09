@@ -30,6 +30,7 @@ export default function HomePage() {
                 <Link to="/signup" className="home-button">Create an Account</Link>
                 <Link to="/login" className="home-button">Login</Link> {/* Added Link to Login Page */}
                 <Link to="/about" className="home-button">Learn More</Link>
+                <Link to="/chat" className="home-button">Chat</Link> {/* Added Link to Chat Page */}
             </section>
 
             <footer className="home-footer">
