@@ -1,62 +1,64 @@
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif; /* Modern font */
-    background-color: #f5f5f5; /* Light background */
-    color: #333; /* Dark text for readability */
+    background-color: #1e1e1e; /* Dark background */
+    color: #f5f5f5; /* Light text for readability */
     margin: 0;
     padding: 0;
-  }
-  
-  /* Container for the Login Page */
-  .login-container {
+}
+
+/* Container for the Login Page */
+.login-container {
     max-width: 600px; /* Fixed width */
     margin: 40px auto; /* Centered horizontally with top margin */
     padding: 20px; /* Padding around the container */
-    background-color: white; /* White background */
+    background-color: #2e2e2e; /* Dark background */
     border-radius: 10px; /* Smooth corners */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     text-align: center; /* Center-align content */
-  }
-  
-  /* Form Styling */
-  .login-form {
+}
+
+/* Form Styling */
+.login-form {
     display: flex;
     flex-direction: column; /* Vertical alignment */
     gap: 15px; /* Space between elements */
-  }
-  
-  /* Input Field Styling */
-  .login-form input {
+}
+
+/* Input Field Styling */
+.login-form input {
     padding: 10px; /* Comfortable padding */
-    border: 1px solid #ccc; /* Light border */
+    border: 1px solid #5e5e5e; /* Light border */
     border-radius: 5px; /* Smooth corners */
     font-size: 16px; /* Consistent font size */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     width: 100%; /* Ensure full width */
-  }
-  
-  .login-form input:focus {
-    border-color: #4CAF50; /* Green border on focus */
+    background-color: #2e2e2e; /* Dark background */
+    color: #f5f5f5; /* Light text */
+}
+
+.login-form input:focus {
+    border-color: #6a5acd; /* Purple border on focus */
     outline: none; /* No outline */
-  }
-  
-  /* Button Styling */
-  .login-form button {
+}
+
+/* Button Styling */
+.login-form button {
     padding: 12px 20px; /* Padding for comfort */
-    background-color: #4CAF50; /* Green background */
+    background-color: #6a5acd; /* Purple background */
     color: white; /* White text for contrast */
     border-radius: 5px; /* Smooth corners */
     border: none; /* No border */
     cursor: pointer; /* Pointer on hover */
     transition: background-color 0.3s; /* Smooth transition on hover */
-  }
-  
-  .login-form button:hover {
-    background-color: #45a049; /* Darken on hover */
-  }
-  
-  /* Error Message Styling */
-  .error-message {
+}
+
+.login-form button:hover {
+    background-color: #483d8b; /* Darken on hover */
+}
+
+/* Error Message Styling */
+.error-message {
     color: red; /* Red for error */
     background-color: #fdd; /* Light red background */
     padding: 10px; /* Padding */
@@ -64,5 +66,4 @@ body {
     border: 1px solid #f99; /* Light red border */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
     margin-top: 10px; /* Space above error message */
-  }
-  
+}

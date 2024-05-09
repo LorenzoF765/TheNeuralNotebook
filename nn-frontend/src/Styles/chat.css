@@ -1,74 +1,122 @@
 /* General Page Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light background for contrast */
-    color: #333; /* Dark text for readability */
+    background-color: #1e1e1e; /* Dark background for contrast */
+    color: #f5f5f5; /* Light text for readability */
     margin: 0;
     padding: 0;
-  }
-  
-  /* App Container */
-  .App {
+}
+
+/* App Container */
+.App {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Full viewport height */
     justify-content: space-between; /* Distribute space evenly */
     padding: 10px; /* Padding around the container */
-  }
-  
-  /* Chat Input Form */
-  form {
+}
+
+/* Chat Input Form */
+form {
     display: flex; /* Align input and button in a row */
     margin-bottom: 10px; /* Space between form and other content */
-  }
-  
-  /* Input Field */
-  input[type='text'] {
+}
+
+/* Input Field */
+input[type='text'] {
     flex: 1; /* Expand to fill available space */
     padding: 10px; /* Comfortable padding */
-    border: 1px solid #ccc; /* Light border */
+    border: 1px solid #5e5e5e; /* Light border */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
     font-size: 16px; /* Readable font size */
-  }
-  
-  /* Submit Button */
-  button {
+    background-color: #2e2e2e; /* Dark background */
+    color: #f5f5f5; /* Light text */
+}
+
+/* Submit Button */
+button {
     padding: 10px 20px; /* Comfortable padding */
-    background-color: #4CAF50; /* Green background */
+    background-color: #6a5acd; /* Purple background */
     color: white; /* White text for contrast */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s; /* Smooth transition on hover */
-  }
-  
-  button:hover {
-    background-color: #45a049; /* Darken on hover */
-  }
-  
-  /* Chat Message Display */
-  p {
+}
+
+button:hover {
+    background-color: #483d8b; /* Darken on hover */
+}
+
+/* Chat Message Display */
+p {
     padding: 10px; /* Padding inside the chat area */
-    background-color: white; /* White background */
-    border: 1px solid #ddd; /* Light border */
+    background-color: #2e2e2e; /* Dark background */
+    border: 1px solid #5e5e5e; /* Light border */
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
     margin: 10px 0; /* Margin to separate messages */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
+    color: #f5f5f5; /* Light text */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
     input[type='text'] {
-      font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
-  
+
     button {
-      padding: 8px 16px; /* Adjust padding for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
     }
-  
+
     p {
-      padding: 8px; /* Adjust padding for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
     }
-  }
-  
+}
+/* Chat Container */
+.chat-container {
+    display: flex;
+    max-width: 800px; /* Maximum width for the chat container */
+    margin: 0 auto; /* Center the chat container horizontally */
+    padding: 20px; /* Padding around the chat container */
+}
+
+/* Chat Window */
+.chat-window {
+    flex: 2; /* Expand to fill available space */
+    background-color: #2e2e2e; /* Dark background */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the chat window */
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1; /* Take up 1/3 of the available space */
+    background-color: #2e2e2e; /* Dark background */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Padding inside the sidebar */
+}
+
+/* Saved Conversation Item */
+.saved-conversation {
+    margin-bottom: 20px; /* Spacing between saved conversations */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.saved-conversation:hover {
+    background-color: #555; /* Darken on hover */
+}
+
+.saved-conversation p {
+    margin: 0; /* Remove default margin */
+    color: white; /* White text */
+}
+
+/* Date */
+.saved-conversation .date {
+    font-weight: bold; /* Bold text */
+    margin-bottom: 5px; /* Spacing below the date */
+}

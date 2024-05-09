@@ -12,26 +12,38 @@ export default function ChatPage() {
     };
 
     const onSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          const response = await axios.post('http://127.0.0.1:8000/chat', {
-              msgData: userInput,
-              conversation: conversation // Include the entire conversation
-          });
-          const aiResponse = response.data.response[0][1];
-          const newConversation = [...conversation, { user: userInput, ai: aiResponse }];
-          setConversation(newConversation);
-          setUserInput('');
-      } catch (error) {
-          console.error('Error sending message:', error);
-      }
-  };
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/chat', {
+                msgData: userInput,
+                conversation: conversation
+            });
+            const aiResponse = response.data.response[0][1];
+            const newConversation = [...conversation, { user: userInput, ai: aiResponse }];
+            setConversation(newConversation);
+            setUserInput('');
+        } catch (error) {
+            console.error('Error sending message:', error);
+        }
+    };
 
     const saveConversation = () => {
         const today = new Date().toISOString().split('T')[0];
         const savedConversation = { date: today, conversation: conversation };
-        setSavedConversations([...savedConversations, savedConversation]);
+
+        const existingIndex = savedConversations.findIndex(conv => conv.date === today);
+        if (existingIndex !== -1) {
+            const updatedConversations = [...savedConversations];
+            updatedConversations[existingIndex] = savedConversation;
+            setSavedConversations(updatedConversations);
+        } else {
+            setSavedConversations([...savedConversations, savedConversation]);
+        }
         setConversation([]);
+    };
+
+    const handleOpenConversation = (index) => {
+        setConversation(savedConversations[index].conversation);
     };
 
     return (
@@ -39,14 +51,8 @@ export default function ChatPage() {
             <div className="sidebar">
                 <h2>Saved Conversations</h2>
                 {savedConversations.map((conversation, index) => (
-                    <div key={index} className="saved-conversation">
+                    <div key={index} className="saved-conversation" onClick={() => handleOpenConversation(index)}>
                         <p>{conversation.date}</p>
-                        {conversation.conversation.map((msg, index) => (
-                            <div key={index} className="message">
-                                <p>User: {msg.user}</p>
-                                <p>AI: {msg.ai}</p>
-                            </div>
-                        ))}
                     </div>
                 ))}
             </div>

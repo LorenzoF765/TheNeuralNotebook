@@ -7,6 +7,22 @@ from rest_framework import status
 from .models import *
 from .openai_test import *
 
+
+@api_view(['GET'])
+def get_saved_conversations(request):
+    saved_conversations = Conversation.objects.all()
+    data = [{'date': conv.datetime} for conv in saved_conversations]
+    return Response(data)
+
+@api_view(['POST'])
+def save_conversation(request):
+    data = request.data
+    date = data.get('date')
+    conversation_data = data.get('conversation')
+    conversation = Conversation.objects.create(date=date, conversation_data=conversation_data)
+    return Response({'success': True})
+
+
 @api_view(['POST'])
 def login_view(request):
     if request.method == 'POST':

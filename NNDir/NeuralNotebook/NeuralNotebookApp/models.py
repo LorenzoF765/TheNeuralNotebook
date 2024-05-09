@@ -16,3 +16,10 @@ class LoginInfo(models.Model):
 
     def __str__(self):
         return self.username
+
+class Conversation(models.Model):
+    datetime = models.DateTimeField()
+    conversation_data = models.JSONField()
+
+    def __str__(self):
+        return str(self.date)
