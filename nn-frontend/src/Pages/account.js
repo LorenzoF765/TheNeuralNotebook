@@ -1,59 +1,79 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import API, { updateUser } from '../Api';
+import '../Styles/account.css';
 
 export default function AccountPage() {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
+    const [isLocked, setIsLocked] = useState(true);
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
+    const token = localStorage.getItem('token');
 
-    const onSubmit = async (e) => {
-        e.preventDefault();
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        }
+    }, [token, navigate]);
 
+    const fetchUserData = async () => {
         try {
-            await axios.post('/api/createUser', {
-                username: 'username', // Replace 'username' with the username you want to associate with the name and age
-                name: name,
-                age: age
+            const response = await API.get('/api/user/', {
+                headers: { Authorization: `Token ${token}` }
             });
-
-            setSuccess(true); // Indicate success
+            if (response.data) {
+                setName(response.data.name);
+                setAge(response.data.age);
+            }
         } catch (error) {
-            setError('An unexpected error occurred. Please try again.');
+            setError('Failed to fetch user data.');
         }
     };
 
+    useEffect(() => {
+        fetchUserData();
+    }, []);
+
+    const handleSave = async () => {
+        try {
+            await updateUser({ name, age }, token);
+            setIsLocked(true);
+            setSuccess('Profile updated successfully.');
+        } catch (error) {
+            setError('Failed to update profile.');
+        }
+    };
+
+    const handleEdit = () => {
+        setIsLocked(false);
+    };
+
     return (
-        <div>
-            <h1>Welcome to the Account Page!</h1>
-
-            <form onSubmit={onSubmit}>
+        <div className="account-container">
+            <h1>Your Account</h1>
+            <div className="account-details">
                 <input
                     type="text"
-                    placeholder="Name"
-                    onChange={(e) => setName(e.target.value)}
                     value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    disabled={isLocked}
                 />
                 <input
-                    type="text"
-                    placeholder="Age"
-                    onChange={(e) => setAge(e.target.value)}
+                    type="number"
                     value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    disabled={isLocked}
                 />
-                <button type="submit">Save</button>
-            </form>
-
-            {error && (
-                <div className="error-message">
-                    <p>{error}</p> {/* Display error message */}
-                </div>
-            )}
-
-            {success && (
-                <div>
-                    <p>Data saved successfully!</p> {/* Display success message */}
-                </div>
-            )}
+                {isLocked ? (
+                    <button onClick={handleEdit}>Edit</button>
+                ) : (
+                    <button onClick={handleSave}>Save</button>
+                )}
+            </div>
+            {success && <p className="success-message">{success}</p>}
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 }

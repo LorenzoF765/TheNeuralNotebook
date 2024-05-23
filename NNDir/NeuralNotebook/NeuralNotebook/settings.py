@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'NeuralNotebookApp',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
     'openai',
 ]

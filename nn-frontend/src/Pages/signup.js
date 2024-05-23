@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../Api';
 import '../Styles/signup.css';
 
 export default function SignUpPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            await axios.post('http://127.0.0.1:8000/modelgen', {
-                username: username,
-                password: password
-            });
-
-            setSuccess(true); // Indicate success
+            await registerUser({ username, password });
+            navigate('/login');
         } catch (error) {
             if (error.response && error.response.status === 400) {
                 setError('Username is already in use.');
@@ -29,10 +25,9 @@ export default function SignUpPage() {
     };
 
     return (
-        <div>
-            <h1>Welcome to the Account Creation Page!</h1>
-
-            <form onSubmit={onSubmit}>
+        <div className="signup-container">
+            <h1>Sign Up</h1>
+            <form onSubmit={onSubmit} className="signup-form">
                 <input
                     type="text"
                     placeholder="Username"
@@ -46,18 +41,10 @@ export default function SignUpPage() {
                     value={password}
                 />
                 <button type="submit">Sign Up</button>
-                <Link to="/login" className="home-button">Already have an account? Login!</Link>
             </form>
-
             {error && (
                 <div className="error-message">
-                    <p>{error}</p> {/* Display error message */}
-                </div>
-            )}
-
-            {success && (
-                <div>
-                    <p>Account created successfully!</p> {/* Display success message */}
+                    <p>{error}</p>
                 </div>
             )}
         </div>

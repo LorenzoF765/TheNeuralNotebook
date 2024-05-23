@@ -1,0 +1,73 @@
+/* General Styling for the Account Page */
+.account-container {
+    max-width: 600px; /* Fixed width for the account container */
+    margin: 40px auto; /* Centered horizontally with top margin */
+    padding: 20px; /* Padding around the container */
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    color: #ffffff; /* White text for contrast */
+    text-align: center; /* Center-align content */
+}
+
+h1 {
+    color: #9c27b0; /* Light purple for the header */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    gap: 15px; /* Space between elements */
+}
+
+.account-form input {
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #9c27b0; /* Light purple border */
+    border-radius: 5px; /* Smooth corners */
+    font-size: 16px; /* Consistent font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: #333333; /* Darker input background */
+    color: #ffffff; /* White text */
+    width: 100%; /* Ensure full width */
+}
+
+.account-form input:disabled {
+    background-color: #444444; /* Slightly different color for disabled inputs */
+}
+
+.account-form button {
+    padding: 12px 20px; /* Padding for comfort */
+    background-color: #9c27b0; /* Light purple background */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 5px; /* Smooth corners */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    font-size: 16px; /* Consistent font size */
+}
+
+.account-form button:hover {
+    background-color: #7b1fa2; /* Darken on hover */
+}
+
+.error-message, .success-message {
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Smooth corners */
+    margin-top: 10px; /* Space above message */
+    font-size: 14px; /* Smaller font for messages */
+}
+
+.error-message {
+    color: #ff5252; /* Red for error */
+    background-color: #ffebee; /* Light red background */
+    border: 1px solid #ff1744; /* Red border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.success-message {
+    color: #4caf50; /* Green for success */
+    background-color: #e8f5e9; /* Light green background */
+    border: 1px solid #388e3c; /* Green border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
