@@ -9,21 +9,11 @@ const API = axios.create({
 
 export const registerUser = (userData) => API.post('/register/', userData);
 export const loginUser = (userData) => API.post('/login/', userData);
-export const getConversations = (token) => API.get('/conversations/', {
+export const getUserInfo = (token) => API.get('/api/user/', {
     headers: { Authorization: `Token ${token}` }
 });
-export const saveConversation = (data, token) => API.post('/conversations/save/', data, {
+export const updateUser = (userData, token) => API.put('/api/user/', userData, {
     headers: { Authorization: `Token ${token}` }
+});
 
-});
-export const updateUser = async (userData, token) => {
-    try {
-        const response = await API.put('/api/user/', userData, {
-            headers: { Authorization: `Token ${token}` }
-        });
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
-};
 export default API;

@@ -1,10 +1,12 @@
 import React from 'react';
 import '../Styles/home.css'; // Import your CSS file for styling
 import { Link } from 'react-router-dom'; // For navigation to other pages
+import Navbar from './Navbar';
 
 export default function HomePage() {
     return (
         <div className="home-container">
+            <Navbar />
             <header className="home-header">
                 <h1>Welcome to The Neural Notebook!</h1>
                 <p>

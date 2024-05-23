@@ -15,13 +15,13 @@ h1 {
     margin-bottom: 20px; /* Space below the header */
 }
 
-.account-form {
+.account-details {
     display: flex;
-    flex-direction: column; /* Vertical alignment */
-    gap: 15px; /* Space between elements */
+    flex-direction: column;
+    gap: 15px;
 }
 
-.account-form input {
+.editable {
     padding: 10px; /* Comfortable padding */
     border: 1px solid #9c27b0; /* Light purple border */
     border-radius: 5px; /* Smooth corners */
@@ -32,11 +32,18 @@ h1 {
     width: 100%; /* Ensure full width */
 }
 
-.account-form input:disabled {
-    background-color: #444444; /* Slightly different color for disabled inputs */
+.locked {
+    padding: 10px; /* Comfortable padding */
+    border: 1px solid #444444; /* Slightly different color for disabled inputs */
+    border-radius: 5px; /* Smooth corners */
+    font-size: 16px; /* Consistent font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: #333333; /* Darker input background */
+    color: #aaaaaa; /* Light text */
+    width: 100%; /* Ensure full width */
 }
 
-.account-form button {
+.account-details button {
     padding: 12px 20px; /* Padding for comfort */
     background-color: #9c27b0; /* Light purple background */
     color: #ffffff; /* White text for contrast */
@@ -45,29 +52,9 @@ h1 {
     cursor: pointer; /* Pointer on hover */
     transition: background-color 0.3s; /* Smooth transition on hover */
     font-size: 16px; /* Consistent font size */
+    margin-top: 10px; /* Margin between buttons */
 }
 
-.account-form button:hover {
+.account-details button:hover {
     background-color: #7b1fa2; /* Darken on hover */
-}
-
-.error-message, .success-message {
-    padding: 10px; /* Padding */
-    border-radius: 5px; /* Smooth corners */
-    margin-top: 10px; /* Space above message */
-    font-size: 14px; /* Smaller font for messages */
-}
-
-.error-message {
-    color: #ff5252; /* Red for error */
-    background-color: #ffebee; /* Light red background */
-    border: 1px solid #ff1744; /* Red border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
-}
-
-.success-message {
-    color: #4caf50; /* Green for success */
-    background-color: #e8f5e9; /* Light green background */
-    border: 1px solid #388e3c; /* Green border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }

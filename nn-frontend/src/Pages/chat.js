@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import '../Styles/chat.css';
-import NavigationBar from './Navbar';
+import Navbar from './Navbar'; // Assuming you have a Navbar component
 
 export default function ChatPage() {
     const [userInput, setUserInput] = useState('');
@@ -49,7 +49,7 @@ export default function ChatPage() {
 
     return (
         <div className="chat-container">
-            <NavigationBar />
+            <Navbar />
             <div className="sidebar">
                 <h2>Saved Conversations</h2>
                 {savedConversations.map((conversation, index) => (
@@ -59,24 +59,25 @@ export default function ChatPage() {
                 ))}
             </div>
             <div className="chat-window">
-                <h1>Chat with AI</h1>
+                <h1 className="chat-header">Chat with Kai</h1>
                 <form onSubmit={onSubmit}>
                     <input
+                        className="chat-input"
                         type="text"
                         value={userInput}
                         onChange={handleUserInputChange}
                         placeholder="Type your message here..."
                     />
-                    <button type="submit">Send</button>
+                    <button className="chat-submit" type="submit">Send</button>
                 </form>
                 {conversation.map((msg, index) => (
                     <div key={index} className="message">
-                        <p>User: {msg.user}</p>
+                        <p>Lorenzo: {msg.user}</p>
                         <p>Kai: {msg.ai}</p>
                     </div>
                 ))}
                 {conversation.length > 0 && (
-                    <button onClick={saveConversation}>Save Conversation</button>
+                    <button className="save-button" onClick={saveConversation}>Save Conversation</button>
                 )}
             </div>
         </div>
