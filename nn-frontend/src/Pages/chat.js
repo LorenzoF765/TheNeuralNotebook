@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Styles/chat.css';
 import Navbar from './Navbar'; // Assuming you have a Navbar component
 
@@ -7,6 +7,19 @@ export default function ChatPage() {
     const [userInput, setUserInput] = useState('');
     const [conversation, setConversation] = useState([]);
     const [savedConversations, setSavedConversations] = useState([]);
+
+    // Load saved conversations from localStorage when the component mounts
+    useEffect(() => {
+        const savedConversations = localStorage.getItem('savedConversations');
+        if (savedConversations) {
+            setSavedConversations(JSON.parse(savedConversations));
+        }
+    }, []);
+
+    // Save conversations to localStorage whenever they are updated
+    useEffect(() => {
+        localStorage.setItem('savedConversations', JSON.stringify(savedConversations));
+    }, [savedConversations]);
 
     const handleUserInputChange = (e) => {
         setUserInput(e.target.value);
@@ -29,17 +42,10 @@ export default function ChatPage() {
     };
 
     const saveConversation = () => {
-        const today = new Date().toISOString().split('T')[0];
-        const savedConversation = { date: today, conversation: conversation };
+        const timestamp = new Date().toISOString();
+        const savedConversation = { id: timestamp, conversation: conversation };
 
-        const existingIndex = savedConversations.findIndex(conv => conv.date === today);
-        if (existingIndex !== -1) {
-            const updatedConversations = [...savedConversations];
-            updatedConversations[existingIndex] = savedConversation;
-            setSavedConversations(updatedConversations);
-        } else {
-            setSavedConversations([...savedConversations, savedConversation]);
-        }
+        setSavedConversations([...savedConversations, savedConversation]);
         setConversation([]);
     };
 
@@ -52,9 +58,9 @@ export default function ChatPage() {
             <Navbar />
             <div className="sidebar">
                 <h2>Saved Conversations</h2>
-                {savedConversations.map((conversation, index) => (
-                    <div key={index} className="saved-conversation" onClick={() => handleOpenConversation(index)}>
-                        <p>{conversation.date}</p>
+                {savedConversations.map((savedConversation, index) => (
+                    <div key={savedConversation.id} className="saved-conversation" onClick={() => handleOpenConversation(index)}>
+                        <p>{savedConversation.id}</p>
                     </div>
                 ))}
             </div>
@@ -72,7 +78,7 @@ export default function ChatPage() {
                 </form>
                 {conversation.map((msg, index) => (
                     <div key={index} className="message">
-                        <p>Lorenzo: {msg.user}</p>
+                        <p>You: {msg.user}</p>
                         <p>Kai: {msg.ai}</p>
                     </div>
                 ))}
