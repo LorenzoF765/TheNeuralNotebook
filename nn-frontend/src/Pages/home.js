@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Styles/home.css'; // Import your CSS file for styling
-import { Link } from 'react-router-dom'; // For navigation to other pages
+import '../Styles/home.css'; 
+import { Link } from 'react-router-dom'; 
 import Navbar from './Navbar';
 
 export default function HomePage() {
