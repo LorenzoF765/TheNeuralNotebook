@@ -4,6 +4,7 @@ import ChatPage from './Pages/chat';
 import SignUpPage from './Pages/signup';
 import LoginPage from './Pages/login';
 import AccountPage from './Pages/account';
+import AboutPage from './Pages/about';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
           <Route path= "/signup" element= {<SignUpPage/>}/>
           <Route path= "/login" element= {<LoginPage/>}/>
           <Route path= "/account" element= {<AccountPage/>}/>
+          <Route path= "*" element= {<HomePage/>}/>
+          <Route path="/about" element={<AboutPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,27 +1,81 @@
-/* navigationBar.css */
-
 /* Navbar Container */
-.navbar-container {
-    background-color: #373737; /* Light gray background */
-    padding: 10px; /* Padding around the navbar */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out items */
-    align-items: center; /* Center items vertically */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+.navbar {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    height: 64px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Navbar Buttons */
-.navbar-button {
-    background-color: #b18bce; /* Light purple background */
-    color: white; /* White text for contrast */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for buttons */
-    margin: 0 5px; /* Margin between buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition on hover */
+/* Navbar Title */
+.navbar-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #a040f4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    user-select: none;
 }
 
-.navbar-button:hover {
-    background-color: #9b6ba4; /* Darken on hover */
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: auto;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-link:hover {
+    background: #292929;
+    color: #a040f4;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0 16px;
+    }
+    .navbar-title {
+        font-size: 20px;
+    }
+    .navbar-links {
+        gap: 16px;
+    }
+    .navbar-link {
+        font-size: 15px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 6px;
+        align-items: flex-start;
+    }
+    .navbar-links {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-end;
+    }
 }

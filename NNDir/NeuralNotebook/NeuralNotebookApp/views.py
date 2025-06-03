@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+import json
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -8,6 +9,7 @@ from .models import UserInfo, Conversation
 from .serializers import UserSerializer, UserInfoSerializer, ConversationSerializer
 from .models import *
 from .openai_test import *
+from .openai_test import collaborative_response
 
 @api_view(['POST'])
 def register_view(request):
@@ -54,6 +56,30 @@ def save_conversation(request):
     )
     return Response({'success': True}, status=status.HTTP_201_CREATED)
 
+@api_view(['POST'])
+def collaborative_chat(request):
+    """Handles collaborative responses from multiple models."""
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            msgData = data.get("msgData")
+            conversation = data.get("conversation", [])
+            
+            print(f"Received conversation: {conversation}")  # Debugging log
+            
+            # Call the collaborative_response function
+            response = collaborative_response(msgData, conversation)
+            
+            # Ensure response is a dictionary and return structured JSON response
+            return JsonResponse({
+                "creative": response["creative"],
+                "technical": response["technical"],
+                "kai": response["kai"]
+            })
+        except Exception as e:
+            print(f"Error in collaborative_chat: {e}")  # Log the error
+            return JsonResponse({"error": str(e)}, status=500)
+    return JsonResponse({"error": "Invalid request method"}, status=400)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def user_detail_view(request):

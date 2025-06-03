@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from NeuralNotebookApp.views import register_view, login_view, get_saved_conversations, save_conversation
+from NeuralNotebookApp.views import register_view, login_view, get_saved_conversations, save_conversation, collaborative_chat
 from django.urls import path
 from NeuralNotebookApp.views import *  # Adjust the import path according to your project structure
 
@@ -27,5 +27,6 @@ urlpatterns = [
     path('conversations/', get_saved_conversations),
     path('save-conversation/', save_conversation),
     path('api/user/', user_detail_view),
+    path('collaborative-chat/', collaborative_chat)  # Add this line
   # Add this line for user detail view
 ]
